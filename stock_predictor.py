@@ -20,7 +20,7 @@ class Predictor:
         self.buffer_size = 100
     
     def fetch_dataset(self):
-        start_date = time.strftime("%Y-%m-%d %H:%M:%S", time.time() - 100*24*3600)[:10]
+        start_date = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(time.time() - 100*24*3600))[:10]
         with self.key as os.environ["IEX_API_KEY"]:
             for s in self.symbol:
                 price,step = [],[]
@@ -82,7 +82,7 @@ class Predictor:
             self.mset.append(self.model.fit(train_set, epochs=3000, validation_data= valid_set, callbacks = [self.callback]))
     
     def predict(self):
-        start_date = time.strftime("%Y-%m-%d %H:%M:%S", time.time() - 10*24*3600)[:10]
+        start_date = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(time.time() - 10*24*3600))[:10]
         with self.key as os.environ["IEX_API_KEY"]:
             test =[]
             for s in self.symbol:
