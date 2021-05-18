@@ -1,3 +1,4 @@
+[![CircleCI](https://circleci.com/gh/ssghost/MyStockPredictor.svg?style=svg)](https://circleci.com/gh/ssghost/MyStockPredictor)
 # MyStockPredictor
 Stock predictor sample model made by Tensorflow Windowed Anomaly Detection.
 ## Usage
