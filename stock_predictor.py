@@ -5,14 +5,14 @@ import pandas as pd
 import pandas_datareader.data as pdr
 
 class Predictor:
-    def __init__(self):
+    def __init__(self, symbol, key):
         self.dataset = []
-        self.key = None
+        self.key = key
         self.tset = []
         self.vset = []
         self.model = None
         self.mset = []
-        self.symbol = []
+        self.symbol = symbol
         self.result = []
         self.callback = None
         self.window_size = 10
