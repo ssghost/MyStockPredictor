@@ -38,4 +38,4 @@ jobs:
       - run:
           name: Run tests
           # This assumes pytest is installed via the install-package step above
-          command: python train.py
+          command: docker build -t rocm-tf-stock-tracker:v1 .
